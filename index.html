@@ -19,13 +19,12 @@
       scroll-behavior: smooth;
     }
 
-    /* 🐾 Cat paw cursor */
-    * {
-      cursor: url("cursor.png") 16 16, auto;
+    /* 🐾 Cat paw cursor (cursor.png) — force override even inline styles */
+    html, body, * {
+      cursor: url("./cursor.png") 16 16, auto !important;
     }
-
-    a, button, input, textarea, select {
-      cursor: url("cursor.png") 16 16, pointer;
+    a, button, input, textarea, select, label {
+      cursor: url("./cursor.png") 16 16, pointer !important;
     }
 
     .hero {
@@ -193,3 +192,4 @@
 
 </body>
 </html>
+
