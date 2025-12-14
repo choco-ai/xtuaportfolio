@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body { font-family: "Poppins", sans-serif; }
+
+    html {
+      scroll-padding-top: 90px;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at top left, #ffeaf1, transparent),
+                  radial-gradient(circle at bottom right, #fff6d7, transparent);
+      padding-top: 90px;
+      padding-bottom: 40px;
+    }
+
+    .btn-pill {
+      border-radius: 50px;
+      padding: 0.6rem 1.4rem;
+    }
+
+    .navbar.fixed-top { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+    .cat-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='26'%3E🐱%3C/text%3E%3C/svg%3E");
+      background-size: 120px 120px;
+      background-repeat: repeat;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#nav" data-bs-offset="90" tabindex="0">
+
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Portfolio</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#game">Game</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg-6 order-2 order-lg-1 mt-5 mt-lg-0 text-center">
+          <img
+            src="./profile.png"
+            class="img-fluid rounded-3"
+            alt="Your Photo Here"
+            style="max-width: 400px;"
+            onerror="this.onerror=null; this.src='./profile.png'; console.log('Image not found: profile.png');"
+          />
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2">
+          <p class="text-muted mb-1 fs-4">Hi,</p>
+          <h1 class="fw-bold">I'm <span>Allexy Casandra Teoco</span></h1>
+          <h2 class="fw-bold text-danger">Web Designer & Developer</h2>
+
+          <div class="d-flex gap-3 mt-4">
+            <a href="#contact" class="btn btn-primary btn-pill">Hire Me</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">About Me</h2>
+      <p>
+        I have basic knowledge in web design, coding and technology. I am eager to know more about how digital systems work.
+      </p>
+    </div>
+  </section>
+
+  <section id="resume" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Resume</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Experience</h4>
+
+          <div class="mt-3">
+            <h6>Visual Graphic Design</h6>
+            <small class="text-muted">Microcadd • 3 months</small>
+            <p class="small">We did Logo, Packaging, Store, Poster, Booth design and more.</p>
+          </div>
+
+          <div class="mt-3">
+            <h6>Computer Systems Servicing</h6>
+            <small class="text-muted">Mary Grace International • 3 months</small>
+            <p class="small">
+              We set up, fix and maintain network and computers. We troubleshoot hardware and software issues.
+              We check cables and devices to make sure everything runs smoothly.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h4>Education & Skills</h4>
+
+          <p class="mt-3">
+            Information Technology- Software Engineer • Trinity University of Asia • 2nd year
+          </p>
+
+          <ul class="small">
+            <li>Computer Systems Servicing NC2</li>
+            <li>Visual Graphic Design NC3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Portfolio</h2>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 text-center">
+          <div class="p-4 border rounded">
+            <h6>Mary Grace International</h6>
+            <p class="small">
+              (April 1–June 27) Computer Systems Servicing where we install, maintain,
+              and repair computer systems and networks.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="p-4 border rounded">
+            <h6>Microcadd Institute</h6>
+            <p class="small">
+              (April–July) Visual Graphic Design where we create visual content
+              using images, colors, and typography.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="game" class="py-5 bg-light position-relative overflow-hidden">
+    <div class="cat-bg" aria-hidden="true"></div>
+
+    <div class="container position-relative" style="z-index: 1;">
+      <h2 class="fw-bold text-center mb-4">Dog vs Cat Game</h2>
+
+      <div class="text-center">
+        <div id="loadingStatus" style="font-size:14px;color:#1e90ff;margin-bottom:10px;">Loading game...</div>
+
+        <div id="info" class="mb-2">
+          Score: <span id="score">0</span> |
+          Lives: <span id="lives">3</span>
+        </div>
+
+        <canvas id="gameCanvas" width="480" height="360"
+          style="background:#222;border:2px solid #555;border-radius:8px;display:block;margin:0 auto 8px;">
+        </canvas>
+
+        <button id="startBtn" disabled
+          style="padding:6px 14px;border:none;border-radius:4px;cursor:pointer;background:#1e90ff;color:#fff;font-size:14px;">
+          Start
+        </button>
+
+        <button id="pauseBtn" disabled
+          style="padding:6px 14px;border:none;border-radius:4px;cursor:pointer;background:#1e90ff;color:#fff;font-size:14px;margin-left:5px;">
+          Pause
+        </button>
+
+        <button id="restartBtn" disabled
+          style="padding:6px 14px;border:none;border-radius:4px;cursor:pointer;background:#1e90ff;color:#fff;font-size:14px;margin-left:5px;">
+          Restart
+        </button>
+
+        <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;">
+          <label for="volumeControl" style="font-size:12px;">Music Vol:</label>
+          <input type="range" id="volumeControl" min="0" max="100" value="50" style="width:120px;">
+          <span id="volumeValue" style="font-size:12px;min-width:35px;">50%</span>
+        </div>
+
+        <div style="font-size:12px;opacity:.8;margin-top:6px;">
+          Move: A / D or ← / → • Shoot: SHIFT • Restart: R
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---- Canvas + UI ----
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+      const scoreEl = document.getElementById("score");
+      const livesEl = document.getElementById("lives");
+      const startBtn = document.getElementById("startBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+      const restartBtn = document.getElementById("restartBtn");
+      const volumeControl = document.getElementById("volumeControl");
+      const volumeValue = document.getElementById("volumeValue");
+      const loadingEl = document.getElementById("loadingStatus");
+
+      const W = canvas.width;
+      const H = canvas.height;
+
+      const backgroundSound = new Audio("sound.mp3");
+      backgroundSound.preload = "auto";
+      backgroundSound.volume = 0.5;
+      backgroundSound.loop = true;
+
+      const enemySound = new Audio("meow.mp3");
+      enemySound.volume = 0.07;
+
+      const crySound = new Audio("cry.mp3");
+      crySound.volume = 0.9;
+      let cryPlayed = false;
+
+      volumeControl.addEventListener("input", (e) => {
+        const volumePercent = Number(e.target.value);
+        backgroundSound.volume = Math.min(Math.max(volumePercent / 100, 0), 1);
+        volumeValue.textContent = volumePercent + "%";
+      });
+
+      function playEnemySound() {
+        if (paused) return;
+        try {
+          enemySound.currentTime = 0;
+          enemySound.play().catch(() => {});
+        } catch {}
+      }
+
+      function playCry() {
+        if (cryPlayed) return;
+        cryPlayed = true;
+        try {
+          crySound.currentTime = 0;
+          crySound.play().catch(() => {});
+          setTimeout(() => {
+            try { crySound.pause(); crySound.currentTime = 0; } catch {}
+          }, 3000);
+        } catch {}
+      }
+
+      let player;
+      let bullets = [];
+      let enemies = [];
+      const keys = {};
+      let score = 0;
+      let lives = 3;
+      let gameOver = false;
+      let paused = false;
+      let gameStarted = false;
+      let lastTime = 0;
+      let spawnTimer = 0;
+      let animationId = null;
+      let imageReady = false;
+      let backgroundStarted = false;
+
+      // ---- Images ----
+      const enemyImg = new Image();
+      enemyImg.src = "cat.png";
+
+      const boomImg = new Image();
+      boomImg.src = "boom.png";
+
+      const playerImg = new Image();
+      playerImg.src = "player.png";
+      let playerImgReady = false;
+      playerImg.onload = () => { playerImgReady = true; };
+
+      // Start even if cat.png fails (fallback graphics)
+      enemyImg.onload = () => {
+        imageReady = true;
+        loadingEl.textContent = "Ready — click Start to play";
+        startBtn.disabled = false;
+      };
+      enemyImg.onerror = () => {
+        imageReady = false;
+        loadingEl.textContent = "cat.png not found — using fallback graphics. Click Start to play";
+        startBtn.disabled = false;
+      };
+
+      // ---- Entities ----
+      function createPlayer() {
+        return { w: 60, h: 40, x: W / 2 - 30, y: H - 50, speed: 0.30 };
+      }
+
+      function spawnEnemy() {
+        const size = 50;
+        const x = Math.random() * (W - size);
+        const y = -size;
+        const speed = 0.05 + Math.random() * 0.06;
+        enemies.push({ x, y, w: size, h: size, speed, state: "alive" });
+      }
+
+      function shootBullet() {
+        bullets.push({
+          x: player.x + player.w / 2 - 3,
+          y: player.y,
+          w: 6,
+          h: 14,
+          speed: 0.6
+        });
+      }
+
+      function resetGame() {
+        player = createPlayer();
+        bullets = [];
+        enemies = [];
+        score = 0;
+        lives = 3;
+        gameOver = false;
+        paused = false;
+        cryPlayed = false;
+
+        scoreEl.textContent = score;
+        livesEl.textContent = lives;
+
+        lastTime = performance.now();
+        spawnTimer = 0;
+
+        if (animationId) cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(gameLoop);
+
+        gameStarted = true;
+        pauseBtn.textContent = "Pause";
+        pauseBtn.disabled = false;
+        restartBtn.disabled = false;
+      }
+
+      function handleInput(delta) {
+        const distance = player.speed * delta;
+        if (keys["ArrowLeft"] || keys["a"] || keys["A"]) player.x -= distance;
+        if (keys["ArrowRight"] || keys["d"] || keys["D"]) player.x += distance;
+
+        if (player.x < 0) player.x = 0;
+        if (player.x + player.w > W) player.x = W - player.w;
+      }
+
+      function updateBullets(delta) {
+        bullets.forEach(b => b.y -= b.speed * delta);
+        bullets = bullets.filter(b => b.y + b.h > 0);
+      }
+
+      function updateEnemies(delta) {
+        enemies.forEach(e => {
+          if (e.state === "alive") e.y += e.speed * delta;
+          if (e.state === "boom") e.explosionTimer -= delta;
+        });
+
+        enemies = enemies.filter(e => {
+          if (e.state === "alive" && e.y > H) {
+            lives--;
+            livesEl.textContent = lives;
+
+            if (lives <= 0) {
+              gameOver = true;
+              try { backgroundSound.pause(); backgroundSound.currentTime = 0; } catch {}
+              try { enemySound.pause(); enemySound.currentTime = 0; } catch {}
+              playCry();
+            }
+            return false;
+          }
+          if (e.state === "boom") return e.explosionTimer > 0;
+          return true;
+        });
+      }
+
+      function checkCollision(a, b) {
+        return !(
+          a.x + a.w < b.x ||
+          a.x > b.x + b.w ||
+          a.y + a.h < b.y ||
+          a.y > b.y + b.h
+        );
+      }
+
+      function handleCollisions() {
+        for (let i = enemies.length - 1; i >= 0; i--) {
+          for (let j = bullets.length - 1; j >= 0; j--) {
+            if (checkCollision(enemies[i], bullets[j])) {
+              if (enemies[i].state !== "boom") {
+                enemies[i].state = "boom";
+                enemies[i].explosionTimer = 400;
+                enemies[i].speed = 0;
+
+                playEnemySound();
+                score += 10;
+                scoreEl.textContent = score;
+              }
+              bullets.splice(j, 1);
+              break;
+            }
+          }
+        }
+
+        for (const e of enemies) {
+          if (checkCollision(e, player)) {
+            lives = 0;
+            livesEl.textContent = lives;
+            gameOver = true;
+            try { backgroundSound.pause(); backgroundSound.currentTime = 0; } catch {}
+            try { enemySound.pause(); enemySound.currentTime = 0; } catch {}
+            playCry();
+            break;
+          }
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        if (playerImgReady && playerImg.complete) {
+          ctx.drawImage(playerImg, player.x, player.y, player.w, player.h);
+        } else {
+          ctx.fillStyle = "#1e90ff";
+          ctx.fillRect(player.x, player.y, player.w, player.h);
+        }
+
+        ctx.fillStyle = "yellow";
+        bullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
+
+        enemies.forEach(e => {
+          if (e.state === "boom") {
+            if (boomImg.complete) ctx.drawImage(boomImg, e.x, e.y, e.w, e.h);
+            else { ctx.fillStyle = "orange"; ctx.fillRect(e.x, e.y, e.w, e.h); }
+          } else {
+            if (imageReady && enemyImg.complete) ctx.drawImage(enemyImg, e.x, e.y, e.w, e.h);
+            else { ctx.fillStyle = "red"; ctx.fillRect(e.x, e.y, e.w, e.h); }
+          }
+        });
+
+        if (gameOver) {
+          ctx.fillStyle = "rgba(0,0,0,0.6)";
+          ctx.fillRect(0, H / 2 - 40, W, 80);
+          ctx.fillStyle = "#fff";
+          ctx.font = "26px Arial";
+          ctx.textAlign = "center";
+          ctx.fillText("GAME OVER", W / 2, H / 2 - 4);
+          ctx.font = "16px Arial";
+          ctx.fillText("Press R or click Restart", W / 2, H / 2 + 22);
+          ctx.textAlign = "start";
+        }
+      }
+
+      function gameLoop(timestamp) {
+        const delta = timestamp - lastTime;
+        lastTime = timestamp;
+
+        if (!gameOver && !paused) {
+          handleInput(delta);
+          updateBullets(delta);
+          updateEnemies(delta);
+
+          spawnTimer += delta;
+          const spawnInterval = Math.max(400, 1000 - score * 2);
+          if (spawnTimer > spawnInterval) {
+            spawnEnemy();
+            spawnTimer = 0;
+          }
+
+          handleCollisions();
+        }
+
+        draw();
+
+        if (!gameOver && !paused) {
+          animationId = requestAnimationFrame(gameLoop);
+        }
+      }
+
+      window.addEventListener("keydown", (e) => {
+        keys[e.key] = true;
+
+        if (e.key === "Shift" && !gameOver && !paused && gameStarted) shootBullet();
+
+        if ((e.key === "r" || e.key === "R") && gameOver) resetGame();
+      });
+
+      window.addEventListener("keyup", (e) => {
+        keys[e.key] = false;
+      });
+
+      restartBtn.addEventListener("click", resetGame);
+
+      pauseBtn.addEventListener("click", () => {
+        if (!gameStarted || gameOver) return;
+
+        if (!paused) {
+          paused = true;
+          if (animationId) cancelAnimationFrame(animationId);
+          try { backgroundSound.pause(); } catch {}
+          pauseBtn.textContent = "Resume";
+        } else {
+          paused = false;
+          lastTime = performance.now();
+          animationId = requestAnimationFrame(gameLoop);
+          pauseBtn.textContent = "Pause";
+          if (backgroundStarted) backgroundSound.play().catch(() => {});
+        }
+      });
+
+      startBtn.addEventListener("click", () => {
+        resetGame();
+        startBtn.disabled = true;
+
+        backgroundSound.play()
+          .then(() => { backgroundStarted = true; })
+          .catch(() => { backgroundStarted = false; });
+
+        pauseBtn.disabled = false;
+        restartBtn.disabled = false;
+      });
+    </script>
+  </section>
+
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-4">Contact</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="p-4 bg-white rounded shadow-sm h-100">
+                <h5 class="fw-bold">Contact Information</h5>
+                <p class="mb-1"><strong>Email:</strong> allexycasandrasteoco@tua.edu.ph</p>
+                <p class="mb-1"><strong>Phone:</strong> +1 234 567 890</p>
+                <p class="mb-1"><strong>Location:</strong> Quezon City, Philippines</p>
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <div class="p-4 bg-white rounded shadow-sm h-100">
+                <form id="contactForm">
+                  <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input id="contactName" name="name" type="text" class="form-control" placeholder="Enter your name" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input id="contactEmail" name="email" type="email" class="form-control" placeholder="Enter your email" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea id="contactMessage" name="message" class="form-control" rows="4" placeholder="Write any message here"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-100 btn-pill">Send Message</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-3 bg-white">
+    © Allexy Casandra Teoco — All Rights Reserved
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
