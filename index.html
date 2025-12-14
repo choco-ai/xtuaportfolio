@@ -14,7 +14,10 @@
   <style>
     body { font-family: "Poppins", sans-serif; }
 
-    html { scroll-padding-top: 80px; }
+    html { 
+      scroll-padding-top: 80px; 
+      scroll-behavior: smooth;
+    }
 
     .hero {
       min-height: 100vh;
@@ -38,9 +41,9 @@
 
 <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+    <a class="navbar-brand fw-bold" href="#portfolio">Portfolio</a>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -60,8 +63,20 @@
   <div class="container">
     <div class="row align-items-center">
 
-      <div class="col-lg-10">
-        <p class="text-muted mb-1">Hi,</p>
+      <!-- ✅ IMAGE (LEFT on desktop, BELOW on mobile) -->
+      <div class="col-lg-6 order-2 order-lg-1 mt-5 mt-lg-0 text-center">
+        <img 
+          src="./profile.PNG"
+          class="img-fluid rounded-3"
+          alt="Your Photo Here"
+          style="max-width: 420px;"
+          onerror="this.onerror=null; this.src='./profile.png'; console.log('Image not found: check filename case and folder (profile.PNG vs profile.png)');"
+        />
+      </div>
+
+      <!-- ✅ TEXT (RIGHT on desktop, TOP on mobile) -->
+      <div class="col-lg-6 order-1 order-lg-2">
+        <p class="text-muted mb-1 fs-4">Hi,</p>
 
         <h1 class="fw-bold">I'm <span>Allexy Casandra Teoco</span></h1>
 
@@ -70,15 +85,6 @@
         <div class="d-flex gap-3 mt-4">
           <a href="#contact" class="btn btn-primary btn-pill">Hire Me</a>
         </div>
-      </div>
-
-      <div class="col-lg-6 mt-5 mt-lg-0 text-center">
-        <img 
-          src="./profile.PNG"
-          class="img-fluid rounded-3"
-          alt="Your Photo Here"
-          onerror="this.onerror=null; this.src='./profile.png'; console.log('Image not found: check filename case and folder (profile.PNG vs profile.png)');"
-        />
       </div>
 
     </div>
@@ -281,7 +287,6 @@
   boomImg.src = "boom.png";
 
   enemyImg.onload = () => {
-    console.log("Alien image loaded!");
     imageReady = true;
     const loadingEl = document.getElementById('loadingStatus');
     if (loadingEl) loadingEl.textContent = 'Ready — click Start to play';
@@ -314,13 +319,6 @@
     }catch(e){}
   }
 
-  volumeControl.addEventListener("input", (e) => {
-    const volumePercent = e.target.value;
-    const v = Math.min(Math.max(volumePercent / 100, 0), 1); 
-    if (typeof backgroundSound !== 'undefined') backgroundSound.volume = v;
-    volumeValue.textContent = volumePercent + "%";
-  });
-
   const backgroundSound = new Audio("sound.mp3");
   backgroundSound.preload = 'auto';
   backgroundSound.volume = 0.5; 
@@ -331,23 +329,21 @@
     if (backgroundStarted) return;
     backgroundSound.play().then(() => { backgroundStarted = true; }).catch(()=>{});
   }
- 
+
+  volumeControl.addEventListener("input", (e) => {
+    const volumePercent = e.target.value;
+    const v = Math.min(Math.max(volumePercent / 100, 0), 1); 
+    backgroundSound.volume = v;
+    volumeValue.textContent = volumePercent + "%";
+  });
+
   let playerImgReady = false;
   const playerImg = new Image();
   playerImg.src = "player.png";   
-  playerImg.onload = () => {
-    console.log("Player image loaded!");
-    playerImgReady = true;
-  };
+  playerImg.onload = () => { playerImgReady = true; };
 
   function createPlayer() {
-    return {
-      w: 60,
-      h: 40,
-      x: W / 2 - 60,
-      y: H - 40,
-      speed: 0.30   
-    };
+    return { w: 60, h: 40, x: W / 2 - 60, y: H - 40, speed: 0.30 };
   }
 
   function spawnEnemy() {
@@ -359,13 +355,7 @@
   }
 
   function shootBullet() {
-    bullets.push({
-      x: player.x + player.w / 2 - 3,
-      y: player.y,
-      w: 6,
-      h: 14,
-      speed: 0.6
-    });
+    bullets.push({ x: player.x + player.w / 2 - 3, y: player.y, w: 6, h: 14, speed: 0.6 });
   }
 
   function resetGame() {
@@ -385,8 +375,6 @@
     spawnTimer = 0;
     if (animationId) cancelAnimationFrame(animationId);
     paused = false;
-    if(pauseBtn) { pauseBtn.textContent = 'Pause'; pauseBtn.disabled = false; }
-    if(restartBtn) restartBtn.disabled = false;
     gameStarted = true;
     tryStartBackground();
     animationId = requestAnimationFrame(gameLoop);
@@ -542,41 +530,8 @@
   window.addEventListener("keyup", e => { keys[e.key] = false; });
 
   restartBtn.addEventListener("click", resetGame);
-
-  if (pauseBtn) {
-    pauseBtn.addEventListener('click', ()=>{
-      if (gameOver) return;
-      if (!paused) {
-        paused = true;
-        if (animationId) cancelAnimationFrame(animationId);
-        try{ backgroundSound.pause(); }catch(e){}
-        try{ enemySound.pause(); }catch(e){}
-        try{ enemySound.currentTime = 0; }catch(e){}
-        pauseBtn.textContent = 'Resume';
-      } else {
-        paused = false;
-        lastTime = performance.now();
-        backgroundSound.play().then(()=>{ backgroundStarted = true; }).catch(()=>{});
-        animationId = requestAnimationFrame(gameLoop);
-        pauseBtn.textContent = 'Pause';
-      }
-    });
-  }
-
-  if (startBtn) {
-    startBtn.addEventListener('click', ()=>{
-      if (!imageReady) return;
-      resetGame();
-      startBtn.disabled = true;
-      if (pauseBtn) pauseBtn.disabled = false;
-      if (restartBtn) restartBtn.disabled = false;
-    });
-  }
 })();
 </script>
 
 </body>
 </html>
-
-
-
